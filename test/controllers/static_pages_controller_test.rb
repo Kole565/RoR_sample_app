@@ -2,7 +2,7 @@ require "test_helper"
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 	test "should get home" do
-		get "/" # url root
+		get "/" # root page
 		assert_response :success
 		assert_select "title", "Home | Ruby on Rails Tutorial Sample App"
 	end
