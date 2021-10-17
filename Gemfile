@@ -6,7 +6,7 @@ ruby '3.0.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use Puma as the app server
-gem 'puma', '~> 5.0', require: false
+gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -24,14 +24,16 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootsnap', '>= 1.4.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw], require: false
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
-  gem 'guard', require: false
+  # Guard for auto tests
+  gem 'guard'
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 end
 
 group :production do
@@ -48,14 +50,16 @@ group :development do
 end
 
 group :test do
+  gem "rake"
+  gem "win32console"
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 3.26', require: false
-  gem 'selenium-webdriver', require: false
+  gem 'capybara', '>= 3.26'
+  gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers', require: false
-  gem "minitest-reporters", ">= 1.0.5", require: false
-  gem "mini_backtrace", ">= 0.1.3", require: false
-  gem "guard-minitest", ">= 2.3.1", require: false
+  gem 'webdrivers'
+  gem "minitest-reporters", ">= 1.0.5"
+  gem "mini_backtrace", ">= 0.1.3"
+  gem "guard-minitest", ">= 2.3.1"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
