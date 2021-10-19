@@ -35,7 +35,9 @@ group :development, :test do
   gem 'sqlite3', '~> 1.4'
   # Guard for auto tests
   gem 'guard'
-  gem 'wdm', '>= 0.1.0' if Gem.win_platform? # For rake compatibility
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform? # For guard, rake compatibility
+  # For layout tests
+  gem 'rails-controller-testing'
 end
 
 group :production do
