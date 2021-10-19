@@ -5,6 +5,8 @@ ruby '3.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+# Bootstrap for css layout
+gem 'bootstrap-sass',       '>= 3.2.0.0'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -33,7 +35,7 @@ group :development, :test do
   gem 'sqlite3', '~> 1.4'
   # Guard for auto tests
   gem 'guard'
-  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform? # For rake compatibility
 end
 
 group :production do
@@ -50,6 +52,7 @@ group :development do
 end
 
 group :test do
+  # Adds support rake tests, their color
   gem "rake"
   gem "win32console"
   # Adds support for Capybara system testing and selenium driver
