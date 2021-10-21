@@ -59,4 +59,20 @@ class UserTest < ActiveSupport::TestCase
 		assert_not user_dup.valid?
 	end
 
+	test "password should't be blank" do
+		@user.password = @user.password_confirmation = " " * 6
+		assert_not @user.valid?
+	end
+
+	test "password should't be too short" do
+		@user.password = @user.password_confirmation = "a" * 5 # Need >= 6
+		assert_not @user.valid?
+	end
+
+	test "password should correspond with confirmation" do
+		@user.password = "a" * 6
+		@user.password_confirmation = "b" * 6
+		assert_not @user.valid?
+	end
+
 end
