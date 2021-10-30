@@ -1,9 +1,6 @@
 require "test_helper"
 
 class ApplicationHelperTest < ActionDispatch::IntegrationTest
-	# test "the truth" do
-	#	 assert true
-	# end
 
 	test "full_title" do
 		assert_equal full_title(), "Ruby on Rails Tutorial Sample App"

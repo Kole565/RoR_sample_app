@@ -36,6 +36,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 		end
 
 		assert_template "users/new"
+		assert_not flash.nil?
 	end
 	
 end
